@@ -1,15 +1,23 @@
 package cucumber
 
-func Run(path string) error {
+import (
+	"context"
+	"sync"
+)
+
+func Run(ctx context.Context, path string) error {
 	documents, err := Features(path)
 
 	if err != nil {
 		return err
 	}
 
+	var wg sync.WaitGroup
 	for _, document := range documents {
-		RunFeature(document)
+		wg.Add(1)
+		go RunFeature(ctx, &wg, document)
 	}
+	wg.Wait()
 
 	return nil
 

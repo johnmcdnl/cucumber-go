@@ -1,10 +1,10 @@
 {
-    "memo": "49e0097fefa1faa62972bdb57e0128b29b8ae61abc1c8df744074c729bf43313",
+    "memo": "f5a08a759ccc8a601d1d8561faf3e56a1e35113b9bd499b9f0fc1e93b2737a46",
     "projects": [
         {
             "name": "github.com/cucumber/gherkin-go",
-            "version": "v4.0.0",
-            "revision": "7f42e9ea3855d6ebf8b87ba83e32dcbfd50f8d41",
+            "branch": "master",
+            "revision": "6ade3b20b388ec10311a46bd28b2fe1dcdcaad83",
             "packages": [
                 "."
             ]

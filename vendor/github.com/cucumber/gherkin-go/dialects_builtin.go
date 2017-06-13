@@ -1,21 +1,21 @@
 package gherkin
 
-// Builtin dialects for af (Afrikaans), am (Armenian), ar (Arabic), bg (Bulgarian), bm (Malay), bs (Bosnian), ca (Catalan), cs (Czech), cy-GB (Welsh), da (Danish), de (German), el (Greek), em (Emoji), en (English), en-Scouse (Scouse), en-au (Australian), en-lol (LOLCAT), en-old (Old English), en-pirate (Pirate), eo (Esperanto), es (Spanish), et (Estonian), fa (Persian), fi (Finnish), fr (French), ga (Irish), gj (Gujarati), gl (Galician), he (Hebrew), hi (Hindi), hr (Croatian), ht (Creole), hu (Hungarian), id (Indonesian), is (Icelandic), it (Italian), ja (Japanese), jv (Javanese), kn (Kannada), ko (Korean), lt (Lithuanian), lu (Luxemburgish), lv (Latvian), mn (Mongolian), nl (Dutch), no (Norwegian), pa (Panjabi), pl (Polish), pt (Portuguese), ro (Romanian), ru (Russian), sk (Slovak), sl (Slovenian), sr-Cyrl (Serbian), sr-Latn (Serbian (Latin)), sv (Swedish), ta (Tamil), th (Thai), tl (Telugu), tlh (Klingon), tr (Turkish), tt (Tatar), uk (Ukrainian), ur (Urdu), uz (Uzbek), vi (Vietnamese), zh-CN (Chinese simplified), zh-TW (Chinese traditional)
+// Builtin dialects for af (Afrikaans), am (Armenian), ar (Arabic), ast (Asturian), az (Azerbaijani), bg (Bulgarian), bm (Malay), bs (Bosnian), ca (Catalan), cs (Czech), cy-GB (Welsh), da (Danish), de (German), el (Greek), em (Emoji), en (English), en-Scouse (Scouse), en-au (Australian), en-lol (LOLCAT), en-old (Old English), en-pirate (Pirate), eo (Esperanto), es (Spanish), et (Estonian), fa (Persian), fi (Finnish), fr (French), ga (Irish), gj (Gujarati), gl (Galician), he (Hebrew), hi (Hindi), hr (Croatian), ht (Creole), hu (Hungarian), id (Indonesian), is (Icelandic), it (Italian), ja (Japanese), jv (Javanese), ka (Georgian), kn (Kannada), ko (Korean), lt (Lithuanian), lu (Luxemburgish), lv (Latvian), mk-Cyrl (Macedonian), mk-Latn (Macedonian (Latin)), mn (Mongolian), nl (Dutch), no (Norwegian), pa (Panjabi), pl (Polish), pt (Portuguese), ro (Romanian), ru (Russian), sk (Slovak), sl (Slovenian), sr-Cyrl (Serbian), sr-Latn (Serbian (Latin)), sv (Swedish), ta (Tamil), th (Thai), tl (Telugu), tlh (Klingon), tr (Turkish), tt (Tatar), uk (Ukrainian), ur (Urdu), uz (Uzbek), vi (Vietnamese), zh-CN (Chinese simplified), zh-TW (Chinese traditional)
 func GherkinDialectsBuildin() GherkinDialectProvider {
 	return buildinDialects
 }
 
 const (
-	feature = "feature"
-	background = "background"
-	scenario = "scenario"
+	feature         = "feature"
+	background      = "background"
+	scenario        = "scenario"
 	scenarioOutline = "scenarioOutline"
-	examples = "examples"
-	given = "given"
-	when = "when"
-	then = "then"
-	and = "and"
-	but = "but"
+	examples        = "examples"
+	given           = "given"
+	when            = "when"
+	then            = "then"
+	and             = "and"
+	but             = "but"
 )
 
 var buildinDialects = gherkinDialectMap{
@@ -139,6 +139,93 @@ var buildinDialects = gherkinDialectMap{
 			but: []string{
 				"* ",
 				"لكن ",
+			},
+		},
+	},
+	"ast": &GherkinDialect{
+		"ast", "Asturian", "asturianu", map[string][]string{
+			feature: []string{
+				"Carauterística",
+			},
+			background: []string{
+				"Antecedentes",
+			},
+			scenario: []string{
+				"Casu",
+			},
+			scenarioOutline: []string{
+				"Esbozu del casu",
+			},
+			examples: []string{
+				"Exemplos",
+			},
+			given: []string{
+				"* ",
+				"Dáu ",
+				"Dada ",
+				"Daos ",
+				"Daes ",
+			},
+			when: []string{
+				"* ",
+				"Cuando ",
+			},
+			then: []string{
+				"* ",
+				"Entós ",
+			},
+			and: []string{
+				"* ",
+				"Y ",
+				"Ya ",
+			},
+			but: []string{
+				"* ",
+				"Peru ",
+			},
+		},
+	},
+	"az": &GherkinDialect{
+		"az", "Azerbaijani", "Azərbaycanca", map[string][]string{
+			feature: []string{
+				"Özəllik",
+			},
+			background: []string{
+				"Keçmiş",
+				"Kontekst",
+			},
+			scenario: []string{
+				"Ssenari",
+			},
+			scenarioOutline: []string{
+				"Ssenarinin strukturu",
+			},
+			examples: []string{
+				"Nümunələr",
+			},
+			given: []string{
+				"* ",
+				"Tutaq ki ",
+				"Verilir ",
+			},
+			when: []string{
+				"* ",
+				"Əgər ",
+				"Nə vaxt ki ",
+			},
+			then: []string{
+				"* ",
+				"O halda ",
+			},
+			and: []string{
+				"* ",
+				"Və ",
+				"Həm ",
+			},
+			but: []string{
+				"* ",
+				"Amma ",
+				"Ancaq ",
 			},
 		},
 	},
@@ -1645,6 +1732,45 @@ var buildinDialects = gherkinDialectMap{
 			},
 		},
 	},
+	"ka": &GherkinDialect{
+		"ka", "Georgian", "ქართველი", map[string][]string{
+			feature: []string{
+				"თვისება",
+			},
+			background: []string{
+				"კონტექსტი",
+			},
+			scenario: []string{
+				"სცენარის",
+			},
+			scenarioOutline: []string{
+				"სცენარის ნიმუში",
+			},
+			examples: []string{
+				"მაგალითები",
+			},
+			given: []string{
+				"* ",
+				"მოცემული",
+			},
+			when: []string{
+				"* ",
+				"როდესაც",
+			},
+			then: []string{
+				"* ",
+				"მაშინ",
+			},
+			and: []string{
+				"* ",
+				"და",
+			},
+			but: []string{
+				"* ",
+				"მაგ­რამ",
+			},
+		},
+	},
 	"kn": &GherkinDialect{
 		"kn", "Kannada", "ಕನ್ನಡ", map[string][]string{
 			feature: []string{
@@ -1850,6 +1976,100 @@ var buildinDialects = gherkinDialectMap{
 			},
 		},
 	},
+	"mk-Cyrl": &GherkinDialect{
+		"mk-Cyrl", "Macedonian", "Македонски", map[string][]string{
+			feature: []string{
+				"Функционалност",
+				"Бизнис потреба",
+				"Можност",
+			},
+			background: []string{
+				"Контекст",
+				"Содржина",
+			},
+			scenario: []string{
+				"Сценарио",
+				"На пример",
+			},
+			scenarioOutline: []string{
+				"Преглед на сценарија",
+				"Скица",
+				"Концепт",
+			},
+			examples: []string{
+				"Примери",
+				"Сценарија",
+			},
+			given: []string{
+				"* ",
+				"Дадено ",
+				"Дадена ",
+			},
+			when: []string{
+				"* ",
+				"Кога ",
+			},
+			then: []string{
+				"* ",
+				"Тогаш ",
+			},
+			and: []string{
+				"* ",
+				"И ",
+			},
+			but: []string{
+				"* ",
+				"Но ",
+			},
+		},
+	},
+	"mk-Latn": &GherkinDialect{
+		"mk-Latn", "Macedonian (Latin)", "Makedonski (Latinica)", map[string][]string{
+			feature: []string{
+				"Funkcionalnost",
+				"Biznis potreba",
+				"Mozhnost",
+			},
+			background: []string{
+				"Kontekst",
+				"Sodrzhina",
+			},
+			scenario: []string{
+				"Scenario",
+				"Na primer",
+			},
+			scenarioOutline: []string{
+				"Pregled na scenarija",
+				"Skica",
+				"Koncept",
+			},
+			examples: []string{
+				"Primeri",
+				"Scenaria",
+			},
+			given: []string{
+				"* ",
+				"Dadeno ",
+				"Dadena ",
+			},
+			when: []string{
+				"* ",
+				"Koga ",
+			},
+			then: []string{
+				"* ",
+				"Togash ",
+			},
+			and: []string{
+				"* ",
+				"I ",
+			},
+			but: []string{
+				"* ",
+				"No ",
+			},
+		},
+	},
 	"mn": &GherkinDialect{
 		"mn", "Mongolian", "монгол", map[string][]string{
 			feature: []string{
@@ -1919,6 +2139,7 @@ var buildinDialects = gherkinDialectMap{
 			when: []string{
 				"* ",
 				"Als ",
+				"Wanneer ",
 			},
 			then: []string{
 				"* ",
@@ -2194,15 +2415,16 @@ var buildinDialects = gherkinDialectMap{
 				"Допустим ",
 				"Дано ",
 				"Пусть ",
+				"Если ",
 			},
 			when: []string{
 				"* ",
-				"Если ",
 				"Когда ",
 			},
 			then: []string{
 				"* ",
 				"То ",
+				"Затем ",
 				"Тогда ",
 			},
 			and: []string{
@@ -2987,4 +3209,3 @@ var buildinDialects = gherkinDialectMap{
 		},
 	},
 }
-
