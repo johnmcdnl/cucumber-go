@@ -1,4 +1,13 @@
 {
-    "memo": "",
-    "projects": []
+    "memo": "49e0097fefa1faa62972bdb57e0128b29b8ae61abc1c8df744074c729bf43313",
+    "projects": [
+        {
+            "name": "github.com/cucumber/gherkin-go",
+            "version": "v4.0.0",
+            "revision": "7f42e9ea3855d6ebf8b87ba83e32dcbfd50f8d41",
+            "packages": [
+                "."
+            ]
+        }
+    ]
 }
