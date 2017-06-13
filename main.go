@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"github.com/johnmcdnl/cucumber-go/cucumber"
+)
 
-func main(){
-	fmt.Println("A Brave New World")
+func main() {
+	if err := cucumber.Run("./"); err != nil {
+		panic(err)
+	}
 }
