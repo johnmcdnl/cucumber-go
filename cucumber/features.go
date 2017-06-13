@@ -12,7 +12,7 @@ const (
 )
 
 func Features(path string) ([]*gherkin.GherkinDocument, error) {
-	var gherkinDocuments []*gherkin.GherkinDocument
+	var documents []*gherkin.GherkinDocument
 
 	err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		if strings.HasSuffix(path, featureExtension) {
@@ -22,14 +22,18 @@ func Features(path string) ([]*gherkin.GherkinDocument, error) {
 			}
 			defer f.Close()
 
-			gd, err := gherkin.ParseGherkinDocument(f)
+			document, err := gherkin.ParseGherkinDocument(f)
 			if err != nil {
 				return err
 			}
-			gherkinDocuments = append(gherkinDocuments, gd)
+			documents = append(documents, document)
 		}
 		return err
 	})
 
-	return gherkinDocuments, err
+	return documents, err
+}
+
+func RunFeature(document *gherkin.GherkinDocument) {
+
 }
